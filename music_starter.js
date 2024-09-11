@@ -27,7 +27,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   add_to_history(other_history, other);
 
 
-  push(); //VOCAL
+  push(); //VOCAL part
   strokeWeight(5);
   stroke(99, 4, 7);
   translate(400, 400); //placement
@@ -38,7 +38,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     let angle = map(i, 0, 10, 0, PI * 2)
     let x = r * cos(angle);
     let y = r * sin(angle);
-    line(x, y, x*((historyVocal/100)+1),y*((historyVocal/100)+1) )
+    line(x, y, x*((historyVocal/100)+1),y*((historyVocal/100)+1) ) //math to allow for peaks
 
   }
   angle += 0.05; //random(-0.1, 0.1);
@@ -47,7 +47,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   pop(); // resets origin back to (0, 0)
 
 
-  push(); //OTHER
+  push(); //DRUM PART
   strokeWeight(5);
   stroke(209, 206, 209); 
   translate(400, 400);
@@ -66,7 +66,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
   pop(); 
 
-  push(); //BASS
+  push(); //BASS PART
   strokeWeight(5);
   stroke(146, 5, 16);
   translate(400, 400);
@@ -88,7 +88,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   pop(); 
 
  
-  push();
+  push(); //OTHER PART
   strokeWeight(5);
   stroke(215, 212, 213);
   translate(400, 400);
