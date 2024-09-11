@@ -78,13 +78,13 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     let x = r * cos(angle);
     let y = r * sin(angle);
     // point(x, y);
-    rect(x, y, 2, 4);
-    // line(x, y)
+    // rect(x, y, 2, 4);
+    line(x, y, x*((historyBass/100)+1),y*((historyBass/100)+1) )
 
   }
   angle += 0.05; 
   r -= random(-2, 2);
 
   pop(); 
-
+  
 }
