@@ -27,38 +27,59 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   add_to_history(other_history, other);
 
 
-  push(); //VOCAL
-  strokeWeight(6);
-  stroke(224, 224, 224);
-  translate(400, 400); //placement
-  for (let i = 0; i <= 10; i++) {
+  // push(); //VOCAL
+  // strokeWeight(6);
+  // stroke(224, 224, 224);
+  // translate(400, 400); //placement
+  // for (let i = 0; i <= 10; i++) {
 
-    historyVocal = vocal_history[vocal_history.length - i]
-    r = map(historyVocal, 10, 100, 10, 20)
-    let angle = map(i, 0, 10, 0, PI * 2)
-    let x = r * cos(angle);
-    let y = r * sin(angle);
-    point(x, y);
+  //   historyVocal = vocal_history[vocal_history.length - i]
+  //   r = map(historyVocal, 10, 100, 10, 20)
+  //   let angle = map(i, 0, 10, 0, PI * 2)
+  //   let x = r * cos(angle);
+  //   let y = r * sin(angle);
+  //   point(x, y);
 
-  }
-  angle += 0.05; //random(-0.1, 0.1);
-  r -= random(-2, 2);
+  // }
+  // angle += 0.05; //random(-0.1, 0.1);
+  // r -= random(-2, 2);
 
-  pop(); // resets origin back to (0, 0)
+  // pop(); // resets origin back to (0, 0)
 
 
-  push(); //OTHER
-  strokeWeight(10);
-  stroke(192, 192, 192);
+  // push(); //OTHER
+  // strokeWeight(10);
+  // stroke(192, 192, 192);
+  // translate(400, 400);
+  // for (let i = 0; i <= 15; i++) {
+
+  //   historyOther = other_history[other_history.length - i]
+  //   r = map(historyOther, 20, 100, 25, 50)
+  //   let angle = map(i, 0, 15, 0, PI * 2)
+  //   let x = r * cos(angle);
+  //   let y = r * sin(angle);
+  //   point(x, y);
+
+  // }
+  // angle += 0.05; 
+  // r -= random(-2, 2);
+
+  // pop(); 
+
+  push(); //BASS
+  strokeWeight(5);
+  stroke(160, 160, 160);
   translate(400, 400);
-  for (let i = 0; i <= 15; i++) {
+  for (let i = 0; i <= 20; i++) {
 
-    historyOther = other_history[other_history.length - i]
-    r = map(historyOther, 20, 100, 25, 50)
-    let angle = map(i, 0, 15, 0, PI * 2)
+    historyBass = bass_history[bass_history.length - i]
+    r = map(historyBass, 0, 75, 60, 75)
+    let angle = map(i, 0, 20, 0, PI * 2)
     let x = r * cos(angle);
     let y = r * sin(angle);
-    point(x, y);
+    // point(x, y);
+    rect(x, y, 2, 4);
+    // line(x, y)
 
   }
   angle += 0.05; 
