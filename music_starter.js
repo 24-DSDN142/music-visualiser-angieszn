@@ -86,5 +86,27 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   r -= random(-2, 2);
 
   pop(); 
-  
+
+ 
+  push(); //DRUM
+  strokeWeight(5);
+  stroke(128, 128, 128);
+  translate(400, 400);
+  for (let i = 0; i <= 20; i++) {
+
+    historyDrum = drum_history[drum_history.length - i]
+    r = map(historyDrum, 0, 100, 80, 100)
+    let angle = map(i, 0, 20, 0, PI * 2)
+    let x = r * cos(angle);
+    let y = r * sin(angle);
+    // point(x, y);
+    // rect(x, y, 2, 4);
+    line(x, y, x*((historyDrum/100)+1),y*((historyDrum/100)+1) )
+    
+
+  }
+  angle += 0.05; 
+  r -= random(-2, 2);
+
+  pop();
 }
