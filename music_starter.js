@@ -68,12 +68,23 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
   push(); //BASS
   strokeWeight(5);
-  stroke(160, 160, 160);
+  // stroke(160, 160, 160);
   translate(400, 400);
   for (let i = 0; i <= 20; i++) {
-
+    stroke(255, 51, 51);
     historyBass = bass_history[bass_history.length - i]
-    r = map(historyBass, 0, 75, 60, 75)
+    if (historyBass<=60) {
+      Stroke(255, 255, 255); // If pressed, set background to red
+    } else if(historyBass>67) {
+      Stroke(255, 51, 51); // Otherwise, set background to blue
+    }
+    if ((historyBass*1)<=60) {
+      stroke(160, 160, 160);
+    } else {
+      Stroke(255, 51, 51);
+    }
+  
+    r = map(historyBass, 0, 100, 50, 100)
     let angle = map(i, 0, 20, 0, PI * 2)
     let x = r * cos(angle);
     let y = r * sin(angle);
