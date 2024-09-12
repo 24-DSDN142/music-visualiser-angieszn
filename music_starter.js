@@ -76,14 +76,14 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
   push(); //VOCAL
-  strokeWeight(5);
+  strokeWeight(3);
   stroke(99, 4, 7);
   translate(400, 400); //placement
-  for (let i = 0; i <= 10; i++) {
+  for (let i = 0; i <= 20; i++) {
 
     historyVocal = vocal_history[vocal_history.length - i]
     r = map(historyVocal, 0, 100, 0, 12)
-    let angle = map(i, 0, 10, 0, PI * 2)
+    let angle = map(i, 0, 20, 0, PI * 2)
     let x = r * cos(angle);
     let y = r * sin(angle);
     line(x, y, x*((historyVocal/100)+1),y*((historyVocal/100)+1) )
