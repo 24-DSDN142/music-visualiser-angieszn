@@ -2,8 +2,8 @@ class RainDrop {
   constructor() {
     this.x = random(width);
     this.y = random(-100, -10);  // Start off-screen
-    this.z = random(0, 20);      // Different z-depth for perspective
-    this.len = map(this.z, 0, 20, 10, 20); // Length based on z-depth
+    this.z = random(0, 15);      // Different z-depth for perspective
+    this.len = map(this.z, 0, 15, 7, 15); // Length based on z-depth
     this.yspeed = map(this.z, 0, 20, 1, 20); // Speed based on depth
   }
 
@@ -19,9 +19,9 @@ class RainDrop {
   }
 
   show() {
-    let thick = map(this.z, 0, 20, 1, 3);  // Thickness based on depth
+    let thick = map(this.z, 0, 20, 2, 5);  // Thickness based on depth
     strokeWeight(thick);
-    stroke(138, 43, 226);  // Color of raindrops
+    stroke(57, 92, 108);  // Color of raindrops
     line(this.x, this.y, this.x, this.y + this.len);  // Draw raindrop as a line
   }
 }
